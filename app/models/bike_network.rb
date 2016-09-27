@@ -1,0 +1,2 @@
+class BikeNetwork < ApplicationRecord
+end

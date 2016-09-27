@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-
-
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -105,5 +103,8 @@ gem 'fuzzy-string-match'
 gem 'redis-rails'
 gem 'redis-namespace'
 gem 'rack-mini-profiler'
-
-gem 'react_on_rails'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem "react_on_rails", "~> 6"
+gem 'mini_racer', platforms: :ruby
+gem 'citybikes_api', '~> 2.0'
