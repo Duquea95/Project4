@@ -11,6 +11,7 @@ header.slideup {
     transition: background-color .2s, height .5s, box-shadow .5s;
 
     .navbar-brand {
+      font-family: $font-family-indie-flower;
       transition: all .2s;
       transition-timing-function: ease-out;
 

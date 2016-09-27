@@ -12,11 +12,12 @@ module BikeMe
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
+    config.cache_store = :redis_store, "redis://localhost:6379/0/cache", { expires_in: 1.days }
     config.generators do |g|
       g.stylesheets = false
       g.scaffold_controller "scaffold_controller"
       g.test_framework :rspec, fixture: true, fixture_replacement: :factory_girl, helper_specs: false, view_specs: false, routing_specs: false, controller_specs: false
     end
-  
+
   end
 end

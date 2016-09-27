@@ -1,10 +1,4 @@
-<!-- <% @bikelocations.each do |location| %>
-    <% @locations = BikeStation.find_by_station_id(location["extra"]["uid"]) %>
-    <p> <%= @locations.address %></p>
-<% end %> -->
-<div style='width: 500px;'>
-    <div id="map" style='width: 600px; height: 500px;'></div>
-</div>
+<div id="map"></div>
 <script type="text/javascript">
     handler = Gmaps.build('Google');
         handler.buildMap({

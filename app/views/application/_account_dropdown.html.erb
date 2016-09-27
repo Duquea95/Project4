@@ -1,10 +1,10 @@
 <li class="dropdown">
   <a aria-expanded="false" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
-    Edit Profile <span class="caret"></span>
+    Welcome <span class="caret"></span>
   </a>
   <ul class="dropdown-menu">
     <% if user_signed_in? %>
-      <%= link_to 'Profile', edit_user_registration_path %>
+      <%= link_to 'Edit Profile', edit_user_registration_path %>
       <%= link_to 'Sign Out', destroy_user_session_path, :method=>:delete %>
     <% else %>
       <!-- CONNECT

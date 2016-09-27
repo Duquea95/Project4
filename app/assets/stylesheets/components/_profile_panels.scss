@@ -1,15 +1,3 @@
-// This is used by the devise generated views.
-// --------------Profile page section--------------------
-//
-// Styles specific to a single page. These should only be  used as
-// a LAST resort unless you're taking the symatic approach and
-// actually using this to describe the parts of your document.
-//
-// .profile-page {
-//   The less here the better!!
-// }
-
-// This is used by the devise generated views.
 .small_screen_flush {
   @media (max-width: $screen-xs-max) {
     padding-left: 0;
@@ -23,6 +11,12 @@
       }
     }
   }
+}
+
+.navbar-brand{
+    font-family: $font-family-indie-flower;
+    color: #978e7a;
+    font-size: 42px;
 }
 
 .profile {
