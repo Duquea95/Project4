@@ -10,29 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927010656) do
+ActiveRecord::Schema.define(version: 20160927022232) do
 
   create_table "bike_networks", force: :cascade do |t|
     t.string   "api_id"
     t.string   "company_name"
     t.string   "city"
     t.string   "country"
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
 
   create_table "bike_stations", force: :cascade do |t|
     t.string   "address"
-    t.integer  "latitude"
-    t.integer  "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.integer  "total_slots"
     t.integer  "bikes_available"
     t.string   "last_updated"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
     t.integer  "empty_slots"
+    t.float    "station_id"
   end
 
   create_table "identities", force: :cascade do |t|

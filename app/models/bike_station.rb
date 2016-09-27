@@ -1,3 +1,3 @@
 class BikeStation < ApplicationRecord
-  belongs_to :company_network
+  # belongs_to :bike_networks
 end

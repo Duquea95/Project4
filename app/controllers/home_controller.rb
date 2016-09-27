@@ -5,7 +5,14 @@ class HomeController < ApplicationController
     @response = CitybikesApi.network(network_id)
     @response = @response["network"]
     @bikelocations = []
-    @empty_slots = 0
+    @empty_slots = []
+    @total_slots = []
+    @bikes_available = []
+    @bikeStationsLatitude = []
+    @bikeStationsLongitude = []
+    @address = []
+    @lastUpdated = []
+    @station_id = []
 
     if @response.present?
         if BikeNetwork.find_by_api_id(@response['id']) == nil
@@ -19,11 +26,22 @@ class HomeController < ApplicationController
             )
         end
         @bikelocations = @response["stations"][0..1000000000000]
-        @bikelocations.each do |location|
-             @empty_slots = location["empty_slots"]
+        @bikelocations.each do |station|
+            if BikeStation.find_by_station_id(station['extra']['uid']) == nil
+                BikeStation.create(
+                    station_id: station["extra"]["uid"],
+                    total_slots: station["extra"]["totalDocks"],
+                    address: station["extra"]["stAddress1"].gsub(/\u0026 /, ''),
+                    last_updated: station["extra"]["lastCommunicationTime"],
+                    empty_slots: station["empty_slots"],
+                    bikes_available: station["free_bikes"],
+                    latitude: station["latitude"],
+                    longitude: station["longitude"]
+                )
+            end
         end
     end
-    # render json:
+    # render json: @station
   end
 
 end
