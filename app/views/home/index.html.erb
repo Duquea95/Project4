@@ -1,23 +1,32 @@
+<!-- <% @bikelocations.each do |location| %>
+    <% @locations = BikeStation.find_by_station_id(location["extra"]["uid"]) %>
+    <p> <%= @locations.address %></p>
+<% end %> -->
 <div style='width: 500px;'>
     <div id="map" style='width: 600px; height: 500px;'></div>
 </div>
 <script type="text/javascript">
     handler = Gmaps.build('Google');
-        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+        handler.buildMap({
+            provider: {},
+            internal: {id: 'map'}
+        },
+        function(){
             markers = handler.addMarkers([
                 {
-                    "lat": 40.6970299,
-                    "lng": -73.97728532552719,
-                    "picture": {
-                        "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                        "width":  30,
-                        "height": 30
-                    },
+                "lat": 40.6970299,
+                "lng": -73.97728532552719,
+                "picture": {
+                    "url":     "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+                    "width":  30,
+                    "height": 30
+                },
                     "infowindow": "hello!"
                 }
             ]);
             handler.bounds.extendWith(markers);
             handler.fitMapToBounds();
             handler.getMap().setZoom(15);
-        });
+        }
+        );
 </script>

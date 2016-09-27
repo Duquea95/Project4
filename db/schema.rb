@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927022232) do
+ActiveRecord::Schema.define(version: 20160927050039) do
 
   create_table "bike_networks", force: :cascade do |t|
     t.string   "api_id"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20160927022232) do
     t.datetime "updated_at",      null: false
     t.integer  "empty_slots"
     t.float    "station_id"
+    t.boolean  "gmaps"
   end
 
   create_table "identities", force: :cascade do |t|
