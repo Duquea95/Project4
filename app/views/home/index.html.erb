@@ -1,23 +1,19 @@
-<% longitude = @longitude %>
-<% latitude = @latitude %>
-<!-- <% @bikelocations.each do |location| %>
-    <p><%= location %></p>
-<%end  %> -->
 <div style='width: 500px;'>
-    <div id="map" style='width: 400px; height: 300px;'></div>
+    <div id="map" style='width: 600px; height: 500px;'></div>
 </div>
 <script type="text/javascript">
     handler = Gmaps.build('Google');
         handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
             markers = handler.addMarkers([
                 {
-                    "lat": <%=latitude%>,
-                    "lng": <%=longitude%>,
+                    "lat": 40.6970299,
+                    "lng": -73.97728532552719,
                     "picture": {
                         "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                        "width":  36,
-                        "height": 36
+                        "width":  30,
+                        "height": 30
                     },
+                    "infowindow": "hello!"
                 }
             ]);
             handler.bounds.extendWith(markers);

@@ -104,6 +104,7 @@ gem 'redis-rails'
 gem 'redis-namespace'
 gem 'rack-mini-profiler'
 gem 'gmaps4rails'
+gem 'geocoder'
 gem 'underscore-rails'
 gem "react_on_rails", "~> 6"
 gem 'mini_racer', platforms: :ruby
