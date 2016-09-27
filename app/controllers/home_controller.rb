@@ -5,14 +5,6 @@ class HomeController < ApplicationController
     @response = CitybikesApi.network(network_id)
     @response = @response["network"]
     @bikelocations = []
-    @empty_slots = []
-    @total_slots = []
-    @bikes_available = []
-    @bikeStationsLatitude = []
-    @bikeStationsLongitude = []
-    @address = []
-    @lastUpdated = []
-    @station_id = []
 
     if @response.present?
         if BikeNetwork.find_by_api_id(@response['id']) == nil
@@ -36,15 +28,24 @@ class HomeController < ApplicationController
                     empty_slots: station["empty_slots"],
                     bikes_available: station["free_bikes"],
                     latitude: station["latitude"],
-                    longitude: station["longitude"]
+                    longitude: station["longitude"],
+                    gmaps: false
                 )
             end
         end
     end
-    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
-        marker.lat user.latitude
-        marker.lng user.longitude
+    @BikeStations = BikeStation.all
+    @hash = Gmaps4rails.build_markers(@BikeStations) do |station, marker|
+      marker.lat station.latitude
+      marker.lng station.longitude
     end
+
+    @allBikes = CitybikesApi.networks
+    # render json: @allBikes["networks"]
+
+  end
+
+  def gmaps4rails_infowindow
   end
 
 end

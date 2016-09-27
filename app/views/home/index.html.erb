@@ -12,18 +12,7 @@
             internal: {id: 'map'}
         },
         function(){
-            markers = handler.addMarkers([
-                {
-                "lat": 40.6970299,
-                "lng": -73.97728532552719,
-                "picture": {
-                    "url":     "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
-                    "width":  30,
-                    "height": 30
-                },
-                    "infowindow": "hello!"
-                }
-            ]);
+            markers = handler.addMarkers(<%=raw @hash.to_json %>)
             handler.bounds.extendWith(markers);
             handler.fitMapToBounds();
             handler.getMap().setZoom(15);
