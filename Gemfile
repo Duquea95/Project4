@@ -51,7 +51,6 @@ end
 gem 'rails_12factor'
 gem 'haml-rails'
 group :development, :test do
-  gem 'sqlite3'
   gem 'rspec', '~> 3.5.0'
   gem 'rspec-rails', '~> 3.5.0'
   gem 'factory_girl_rails'
@@ -78,7 +77,6 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'lograge'
 end
 

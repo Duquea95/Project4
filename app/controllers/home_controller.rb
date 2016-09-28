@@ -62,11 +62,12 @@ class HomeController < ApplicationController
     @hash = Gmaps4rails.build_markers(@BikeStations) do |station, marker|
       marker.lat station.latitude
       marker.lng station.longitude
+      marker.infowindow "Location: #{station.address},  Empty Slots: #{station.empty_slots},  Bikes Available: #{station.bikes_available},  Last Updated: #{station.last_updated}"
     end
-
   end
 
   def gmaps4rails_infowindow
+
   end
 
 end
