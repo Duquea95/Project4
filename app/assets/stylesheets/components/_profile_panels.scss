@@ -1,44 +1,4 @@
-.small_screen_flush {
-  @media (max-width: $screen-xs-max) {
-    padding-left: 0;
-    padding-right: 0;
-
-    .panel {
-      border-radius: 0;
-      border: none;
-      .panel-heading {
-        border-radius: 0;
-      }
-    }
-  }
-}
-
-nav.navbar{
-
-  border:none;
-  @include box-shadow( 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28) );
-  transition: background-color .2s, height .5s, box-shadow .5s;
-  background-color: #7da3be;
-  margin: 0;
-  border: 0;
-
-  .navbar-brand{
-
-    font-family: $font-family-indie-flower;
-    font-size: 42px;
-    color: #895617;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-
-  }
-
-  li > a {
-
-    color: #895617;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-}
+// Sign In / Log In
 
 .profile {
   border: 0;
