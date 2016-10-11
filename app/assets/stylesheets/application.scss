@@ -10,6 +10,8 @@
 //   $ bundle show bootstrap-sass
 //
 
+@import 'globals/reset';
+
 
 // These both need to be imported before bootstrap:
 @import 'globals/fonts';
@@ -40,6 +42,7 @@
 @import 'components/panel';
 @import 'components/profile_panels';
 @import 'components/map_container';
+@import 'components/header';
 
 
 // --------------Sections------------------------------

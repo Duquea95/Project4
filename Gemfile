@@ -1,19 +1,59 @@
 source 'https://rubygems.org'
 
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
+# Postgres
 gem 'pg'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+
+# Front-End
+gem 'sass-rails', '~> 5.0'
+gem 'bootstrap-sass'
+gem 'modernizr-rails'
+gem 'meta-tags', require: 'meta_tags'
+gem 'responders', '~> 2.0'
+gem 'bh'
+## Enables simple forms from Bootstrap
+gem 'simple_form'
+gem 'premailer-rails'
+## Geolocater
+gem 'geocoder'
+## React.js
+gem "react_on_rails", "~> 6"
+## Google's map embedded on screen
+gem 'gmaps4rails'
+gem 'mini_racer', platforms: :ruby
+## CitiBikes API
+gem 'citybikes_api', '~> 2.0'
+
+# Authentication
+gem 'devise', '~> 4.2'
+gem 'omniauth'
+gem 'omniauth-oauth2', '1.3.1'
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
+gem 'omniauth-instagram'
+
+# Social Media Identity
+gem 'google-api-client', '0.8.2', require: 'google/api_client'
+gem 'twitter'
+gem 'instagram'
+
+# Back End
+## HTML/XML Parser
+gem 'nokogiri'
+gem 'fuzzy-string-match'
+## Caching with redis
+gem 'redis-rails'
+gem 'redis-namespace'
+gem 'rack-mini-profiler'
+## Asset Pipeline (usually in the manifest.js but is a dependancy for gmaps4rails)
+gem 'underscore-rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -79,32 +119,3 @@ end
 group :production do
   gem 'lograge'
 end
-
-gem 'bootstrap-sass'
-gem 'modernizr-rails'
-gem 'meta-tags', require: 'meta_tags'
-gem 'responders', '~> 2.0'
-gem 'bh'
-gem 'simple_form'
-gem 'premailer-rails'
-gem 'nokogiri'
-gem 'devise', '~> 4.2'
-gem 'omniauth'
-gem 'omniauth-oauth2', '1.3.1'
-gem 'omniauth-twitter'
-gem 'twitter'
-gem 'omniauth-google-oauth2'
-gem 'google-api-client', '0.8.2', require: 'google/api_client'
-gem 'omniauth-facebook'
-gem 'omniauth-instagram'
-gem 'instagram'
-gem 'fuzzy-string-match'
-gem 'redis-rails'
-gem 'redis-namespace'
-gem 'rack-mini-profiler'
-gem 'gmaps4rails'
-gem 'geocoder'
-gem 'underscore-rails'
-gem "react_on_rails", "~> 6"
-gem 'mini_racer', platforms: :ruby
-gem 'citybikes_api', '~> 2.0'

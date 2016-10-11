@@ -1,12 +1,15 @@
-<%= navbar position: :static do %>
-  <%= vertical do %>
-    <%= link_to root_path do %>
-      NYCycles
+<header class="slideup">
+  <%= navbar :class => 'navbar' do %>
+    <%= vertical do %>
+      <%= link_to root_path do %>
+        NYCycles
+      <% end %>
+    <% end %>
+    <%= horizontal do %>
+      <%= nav class: 'navbar-right' do %>
+        <%= render partial: "application/about_tab" %>
+        <%= render partial: "application/account_dropdown" %>
+      <% end %>
     <% end %>
   <% end %>
-  <%= horizontal do %>
-    <%= nav class: 'navbar-right' do %>
-      <%= render partial: "application/account_dropdown" %>
-    <% end %>
-  <% end %>
-<% end %>
+</header>

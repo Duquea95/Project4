@@ -1,6 +1,10 @@
 class HomeController < ApplicationController
 
   def index
+
+##
+## Going international ;)
+##
     # @response = CitybikesApi.networks
     # @response = @response["networks"]
     # if @response.present?
@@ -26,6 +30,9 @@ class HomeController < ApplicationController
     # end
     # render json: @res2
 
+##
+## Api call for NYC bikes only
+##
     network_id = "citi-bike-nyc"
     @response = CitybikesApi.network(network_id)
     @response = @response["network"]
@@ -62,12 +69,8 @@ class HomeController < ApplicationController
     @hash = Gmaps4rails.build_markers(@BikeStations) do |station, marker|
       marker.lat station.latitude
       marker.lng station.longitude
-      marker.infowindow "Location: #{station.address},  Empty Slots: #{station.empty_slots},  Bikes Available: #{station.bikes_available},  Last Updated: #{station.last_updated}"
+      marker.infowindow "Location: #{station.address}, Empty Slots: #{station.empty_slots},  Bikes Available: #{station.bikes_available},  Last Updated: #{station.last_updated}"
     end
-  end
-
-  def gmaps4rails_infowindow
-
   end
 
 end

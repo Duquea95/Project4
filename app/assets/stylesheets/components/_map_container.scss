@@ -1,17 +1,12 @@
 #map{
-    width: 70vw;
-    height: 85vh;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
+    bottom: 100;
     z-index: 0;
-    margin: 0 auto;
-}
-.navbar{
-    background-color: #7da3be;
-    margin: 0;
-    border: 0;
-}
 
-footer{
-    background-color: #7da3be;
-    text-align: center;
+    .gm-style-iw{
+      // For divs in map
+    }
+
 }
