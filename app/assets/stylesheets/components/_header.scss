@@ -17,7 +17,7 @@ $slideup-navbar-height: $navbar-height !default;
 
 header.slideup {
   position: static;
-
+  width: 1265px;
   height: $slideup-navbar-height;
 
   .navbar {
@@ -26,7 +26,6 @@ header.slideup {
     // transition: background-color .2s, height .5s, box-shadow .5s;
     background-color: #7da3be;
     margin: 0;
-    width: 100vw;
     border: 0;
 
     .navbar-brand {
