@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <%= render 'head' %>
+    <body>
+        <h1>hello</h1>
+        <div id="map"></div>
+    </body>
+    <script type="text/javascript">
+    handler = Gmaps.build('Google');
+    handler.buildMap({
+        provider: {},
+        internal: {id: 'map'}
+    },
+    function(){
+        markers = handler.addMarkers(<%=raw @hash.to_json %>)
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+        handler.getMap().setZoom(10);
+    }
+);
+</script>
+</html>
