@@ -1,0 +1,23 @@
+div.header{
+    background-color: green;
+    height: 78px;
+    max-height: 78px;
+}
+div.customSlide{
+    background-color: black;
+    height: 600px;
+    max-height: 600px;
+
+    div.carousel-inner{
+        max-width: 100%;
+        height: inherit;
+        background-color: blue;
+
+        div.item{
+
+            img.carousel-Img{
+
+            }
+        }
+    }
+}

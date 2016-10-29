@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <%= render 'head' %>
-  <%= render 'body' %>
-  <%= yield %>
+    <%= render 'head' %>
+    <body>
+        <%= yield %>
+        <div class="header">
+            This is the header
+        </div>
+        <div id="myCarousel" class="carousel slide customSlide" data-ride="carousel" data-interval="5000" data-wrap="true" data-keyboard="true">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <%= image_tag('citibike1', :alt => "Citibike covered in snow", :class => "carousel-Img") %>
+                </div>
+<!-- 
+                <div class="item">
+                    <%= image_tag('citibike2', :alt => "Citibike riders by Brooklyn Bridge", :class => "carousel-Img") %>
+                </div>
+
+                <div class="item">
+                    <%= image_tag('citibike3', :alt => "Citibike in New York City", :class => "carousel-Img") %>
+                </div>
+
+                <div class="item">
+                    <%= image_tag('citibike5', :alt => "Leonardo DiCaprio riding Citi Bike in New York.", :class => "carousel-Img") %>
+                </div> -->
+            </div>
+        </div>
+
+    </body>
 </html>
