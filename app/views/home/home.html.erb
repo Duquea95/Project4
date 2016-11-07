@@ -1,71 +1,105 @@
 <!DOCTYPE html>
 <html>
-    <%= render 'head' %>
+    <head>
+      <meta charset="utf-8"/>
+      <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+      <%= display_meta_tags :site => 'NyCycles!', :title => 'NYC Citi Bike Database', :reverse => true %>
+      <meta name="description"/>
+      <meta content="width=device-width" name="viewport"/>
+      <%= render 'stylesheets' %>
+      <%= render 'javascripts' %>
+      <%= csrf_meta_tag %>
+    </head>
     <body>
     <%= yield %>
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
+    <div class="container-fluid" id="header">
+        <nav class="navbar navbar-fixed-top row" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNavigation">
                     <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">NyCycles</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="mainNavigation">
+            <div class="collapse navbar-collapse navbar-inverse" id="mainNavigation">
+                <%= link_to('NYCYCLES', root_path, :class => :'navbar-brand') %>
                 <ul class="nav navbar-nav">
                     <li>
-                        <%= link_to('About', '/about', :method => :get) %>
                     </li>
                     <li>
-                        <%= link_to('Bike Stations', 'stations/index', :method => :get) %>
+                        <%= link_to('ABOUT', '#about') %>
                     </li>
                     <li>
-                        <%= link_to('Contact', '/contact', :method => :get) %>
+                        <%= link_to('BIKE STATIONS', 'stations/index', :method => :get) %>
+                    </li>
+                    <li>
+                        <%= link_to('CONTACT', '#contact') %>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
+        </nav>
+    <!-- /.container -->
+    </div>
 
     <!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="5000" data-wrap="true">
+    <div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel" data-interval="5000" data-wrap="true">
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
 
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('/assets/citibike1');"></div>
+                <div class="fill" style="background-image:url('/assets/citibike1');">
+                </div>
+                <div class="carousel-caption">
+                    <h1 class="caption">NyCycles is a CitiBike station database! All the information you need on all New York locations here!</h1>
+                </div>
             </div>
 
             <div class="item">
                 <!-- Set the second background image using inline CSS below. -->
                 <div class="fill" style="background-image:url('/assets/citibike2');"></div>
+                <div class="carousel-caption">
+                    <h1 class="caption">With over 400 locations and counting, find a station near you!</h1>
+                </div>
             </div>
 
             <div class="item">
                 <!-- Set the third background image using inline CSS below. -->
                 <div class="fill" style="background-image:url('/assets/citibike4');"></div>
+                <div class="carousel-caption center">
+                    <h1 class="caption">Get some exercise while enjoying the views of the Big Apple! Find a bike today!</h1>
+                </div>
             </div>
 
         </div>
 
-    </header>
+    </div>
 
     <!-- Page Content -->
-    <div class="container">
+
+    <div class="container-fluid" id="contentBody">
+        <hr>
 
         <div class="row">
-            <div class="col-lg-12">
-                <h1>NyCycles</h1>
-                <p>The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the <code>full-slider.css</code>file.</p>
+            <div class="col-lg-4 center" id="about">
+                <h1>About NyCycles</h1>
+                <p>Looking for a quicker commute? NyCycles contains all New York Citi Bike station locations in its database. This web app was built as a personal project and is still going under constuction! Technologies used include Ruby on Rails, Citi Bike API, Sass/SCSS, and HTML.</p>
+            </div>
+
+
+
+            <div class="col-lg-4 center col-lg-offset-4" id="contact">
+                <h1>Contact Me!</h1>
+                <ul>
+                    <br>
+                    <li><a href="mailto:duquea95@gmail.com">Email</a></li>
+                    <br>
+                    <li><a href="https://anthony-duque.com">Personal Site</a></li>
+                    <br>
+                    <li><a href="https://github.com/duquea95">Github</a></li>
+                </ul>
             </div>
         </div>
 
@@ -75,7 +109,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; NyCycles</p>
+                    <p>Copyright &copy; NyCycles.</p>
                 </div>
             </div>
             <!-- /.row -->
