@@ -4,7 +4,7 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Postgres
-gem 'pg'
+gem 'pg', '~> 0.18'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -85,9 +85,9 @@ gem 'haml-rails'
 group :development, :test do
   gem 'rspec', '~> 3.5.0'
   gem 'rspec-rails', '~> 3.5.0'
-  gem 'factory_girl_rails'
+  # gem 'factory_girl_rails'
   gem 'capybara'
-  # gem 'cucumber-rails', branch: 'rails-5', require: false
+  gem 'cucumber-rails', require: false
   gem 'guard-rspec', '~> 4.6.4', require: false
   gem 'guard-cucumber'
   gem 'database_cleaner'
